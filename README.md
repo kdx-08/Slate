@@ -44,3 +44,9 @@
 | DELETE | /api/notes/:id | Delete a note     |
 
 ---
+
+## License
+
+[MIT](https://github.com/charmbracelet/bubbletea/raw/main/LICENSE)
+
+---
