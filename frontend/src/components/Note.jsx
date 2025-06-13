@@ -9,7 +9,7 @@ const Note = (props) => {
   const handleRemove = async (id) => {
     const confirm = window.confirm('Are you sure you want to delete this note?');
     if (confirm) {
-      const res = await axios.delete(`http://localhost:5000/api/notes/${id}`);
+      const res = await axios.delete(`/api/notes/${id}`);
       if (res.data.success) {
         props.setNotes((prev) => prev.filter((note) => note._id !== id));
         toast.success('Note deleted successfully!');

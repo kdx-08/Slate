@@ -19,14 +19,15 @@ const NoteForm = ({ setLoading }) => {
 
   const handleSubmit = async () => {
     setLoading(true);
-    const res = await axios.post('http://localhost:5000/api/notes', { title, content });
-    if (res.data.success) {
+    try {
+      await axios.post('/api/notes', { title, content });
       toast.success('Note added!');
       setTitle('');
       setContent('');
       setLoading(false);
       navigate('/');
-    } else {
+    } catch (error) {
+      console.log(error);
       toast.error('Error occurred!');
       setLoading(false);
     }

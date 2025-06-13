@@ -25,14 +25,15 @@ const EditForm = ({ note, setLoading }) => {
 
   const handleUpdate = async () => {
     setLoading(true);
-    const res = await axios.put(`http://localhost:5000/api/notes/${id}`, { title, content });
-    if (res.data.success) {
+    try {
+      await axios.put(`/api/notes/${id}`, { title, content });
       toast.success('Note updated!');
       setTitle('');
       setContent('');
       setLoading(false);
       navigate('/');
-    } else {
+    } catch (error) {
+      console.log(error);
       toast.error('Error occurred!');
       setLoading(false);
     }
@@ -41,7 +42,7 @@ const EditForm = ({ note, setLoading }) => {
   const handleRemove = async (id) => {
     const confirm = window.confirm('Are you sure you want to delete this note?');
     if (confirm) {
-      const res = await axios.delete(`http://localhost:5000/api/notes/${id}`);
+      const res = await axios.delete(`/api/notes/${id}`);
       if (res.data.success) {
         toast.success('Note deleted successfully!');
         navigate('/');
