@@ -1,0 +1,21 @@
+{
+  "name": "slate",
+  "version": "1.0.0",
+  "description": "**Slate** is a simple, MERN (MongoDB, Express, React, Node.js) application for creating, reading, updating, and deleting notes. It provides a minimal interface for productivity and easy note management.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdx-08/Slate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdx-08/Slate/issues"
+  },
+  "homepage": "https://github.com/kdx-08/Slate#readme"
+}
